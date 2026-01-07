@@ -40,31 +40,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const addButtons = document.querySelectorAll('.group-btn');
     addButtons.forEach(btn => {
         btn.addEventListener('click', function(e) {
+            e.preventDefault();
             // Visual feedback
             const originalContent = this.innerHTML;
             
             // Success state
-            this.classList.remove('bg-neutral-800', 'hover:bg-red-600');
-            this.classList.add('bg-green-600');
-            this.innerHTML = `<i data-lucide="check" class="w-5 h-5"></i><span>Добавлено</span>`;
+            this.classList.remove('bg-neutral-800', 'hover:bg-red-700');
+            this.classList.add('bg-green-600', 'hover:bg-green-700');
+            this.innerHTML = `<i data-lucide="check" class="w-4 h-4"></i><span>Добавлено</span>`;
             lucide.createIcons();
             
+            // Update cart counter (simulated)
+            const cartBadge = document.querySelector('.fa-shopping-bag + span, .lucide-shopping-bag + span');
+            if(cartBadge) {
+                let count = parseInt(cartBadge.innerText);
+                cartBadge.innerText = count + 1;
+                cartBadge.classList.add('scale-125', 'bg-red-500');
+                setTimeout(() => cartBadge.classList.remove('scale-125', 'bg-red-500'), 200);
+            }
+
             // Revert after 2 seconds
             setTimeout(() => {
-                this.classList.remove('bg-green-600');
-                this.classList.add('bg-neutral-800', 'hover:bg-red-600');
+                this.classList.remove('bg-green-600', 'hover:bg-green-700');
+                this.classList.add('bg-neutral-800', 'hover:bg-red-700');
                 this.innerHTML = originalContent;
                 lucide.createIcons();
             }, 2000);
-
-            // Animate Cart Icon in Header
-            const cartBadge = document.querySelector('.fa-shopping-bag ~ span') || document.querySelector('button .bg-red-600');
-            if (cartBadge) {
-                let count = parseInt(cartBadge.innerText);
-                cartBadge.innerText = count + 1;
-                cartBadge.classList.add('scale-125');
-                setTimeout(() => cartBadge.classList.remove('scale-125'), 200);
-            }
         });
     });
 });

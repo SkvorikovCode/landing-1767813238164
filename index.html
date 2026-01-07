@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body class="bg-neutral-950 text-white font-sans antialiased selection:bg-red-700 selection:text-white">
 
@@ -15,10 +17,10 @@
     <nav class="fixed w-full z-50 transition-all duration-300 bg-neutral-950/90 backdrop-blur-md border-b border-white/10" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
+                <!-- Logo with Emoji -->
                 <a href="#" class="flex items-center gap-2 group">
-                    <div class="w-10 h-10 bg-red-700 rounded-full flex items-center justify-center transform group-hover:rotate-45 transition-transform duration-300">
-                        <span class="font-serif font-bold text-xl text-white">С</span>
+                    <div class="w-12 h-12 flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                        <span class="text-4xl filter drop-shadow-md">🍣</span>
                     </div>
                     <span class="font-serif text-2xl font-bold tracking-wider text-white group-hover:text-red-500 transition-colors">Суши<span class="text-red-600">Сет.</span></span>
                 </a>
@@ -51,7 +53,7 @@
         </div>
 
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="hidden md:hidden bg-neutral-900 border-t border-white/10 absolute w-full left-0">
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-900 border-t border-white/10 absolute w-full left-0 shadow-2xl">
             <div class="flex flex-col p-4 gap-4">
                 <a href="#home" class="text-lg hover:text-red-500 py-2 border-b border-white/5">Главная</a>
                 <a href="#menu" class="text-lg hover:text-red-500 py-2 border-b border-white/5">Меню</a>
@@ -70,7 +72,7 @@
         <!-- Animated Background -->
         <div class="absolute inset-0 z-0">
             <!-- Slow Zoom Image -->
-            <div class="absolute inset-0 bg-[url('https://placehold.co/1920x1080/1a1a1a/333333?text=Sushi+Art+Dark')] bg-cover bg-center animate-slow-zoom opacity-50"></div>
+            <div class="absolute inset-0 bg-[url('https://placehold.co/1920x1080/1a1a1a/333333?text=Dark+Sushi+Atmosphere')] bg-cover bg-center animate-slow-zoom opacity-40"></div>
             
             <!-- Animated Gradient Overlay -->
             <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-transparent"></div>
@@ -78,237 +80,278 @@
             
             <!-- Floating Embers/Particles Animation -->
             <div class="particles-container absolute inset-0 overflow-hidden pointer-events-none">
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
+                <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
+                <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
             </div>
         </div>
 
         <div class="relative z-10 container mx-auto px-4 text-center">
             <div class="mb-6 flex justify-center">
-                <span class="px-4 py-1 border border-red-600 text-red-500 text-xs uppercase tracking-[0.2em] rounded-full bg-red-900/10 backdrop-blur-sm animate-fade-in-up">
+                <span class="px-4 py-1 border border-red-600/50 text-red-500 text-xs uppercase tracking-[0.2em] rounded-full bg-red-900/20 backdrop-blur-sm animate-fade-in-up">
                     Премиум Японская Кухня
                 </span>
             </div>
-            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight animate-fade-in-up" style="animation-delay: 0.2s">
-                ВКУС <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">ИСКУССТВА</span>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 leading-tight animate-fade-in-up" style="animation-delay: 0.1s;">
+                Искусство <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Вкуса</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed animate-fade-in-up" style="animation-delay: 0.4s">
-                Погрузитесь в атмосферу современной Японии в <span class="text-red-500 font-semibold">СушиСет</span>. Авторские роллы, свежайшие морепродукты и уникальная подача.
+            
+            <p class="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-10 animate-fade-in-up" style="animation-delay: 0.2s;">
+                Погрузитесь в атмосферу настоящей Японии с нашими авторскими сетами. 
+                Только свежие морепродукты и идеальный рис.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style="animation-delay: 0.6s">
-                <a href="#menu" class="px-8 py-4 bg-red-700 hover:bg-red-600 text-white font-bold tracking-widest uppercase rounded transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(220,38,38,0.5)]">
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style="animation-delay: 0.3s;">
+                <a href="#menu" class="px-8 py-4 bg-red-700 text-white font-semibold rounded-full hover:bg-red-600 transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(220,38,38,0.4)] flex items-center justify-center gap-2">
+                    <i data-lucide="utensils" class="w-5 h-5"></i>
                     Смотреть Меню
                 </a>
-                <a href="#delivery" class="px-8 py-4 border border-white/20 hover:border-white text-white font-bold tracking-widest uppercase rounded hover:bg-white/5 transition-all backdrop-blur-sm">
+                <a href="#delivery" class="px-8 py-4 bg-transparent border border-white/20 text-white font-semibold rounded-full hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="truck" class="w-5 h-5"></i>
                     Заказать Доставку
                 </a>
             </div>
         </div>
-
-        <!-- Scroll Down Indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50">
-            <i data-lucide="chevron-down" class="w-8 h-8"></i>
-        </div>
     </header>
 
+    <!-- Features Section -->
+    <section class="py-20 bg-neutral-900 relative">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 bg-neutral-950/50 rounded-2xl border border-white/5 hover:border-red-900/50 transition-colors group">
+                    <div class="w-16 h-16 mx-auto bg-neutral-900 rounded-full flex items-center justify-center mb-6 text-red-600 group-hover:scale-110 transition-transform">
+                        <i data-lucide="fish" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-serif">Свежайшая Рыба</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">Прямые поставки лосося и тунца каждое утро. Мы не используем заморозку.</p>
+                </div>
+                <div class="p-6 bg-neutral-950/50 rounded-2xl border border-white/5 hover:border-red-900/50 transition-colors group">
+                    <div class="w-16 h-16 mx-auto bg-neutral-900 rounded-full flex items-center justify-center mb-6 text-red-600 group-hover:scale-110 transition-transform">
+                        <i data-lucide="chef-hat" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-serif">Опытные Шефы</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">Наши сушисты прошли обучение у японских мастеров и знают все тонкости.</p>
+                </div>
+                <div class="p-6 bg-neutral-950/50 rounded-2xl border border-white/5 hover:border-red-900/50 transition-colors group">
+                    <div class="w-16 h-16 mx-auto bg-neutral-900 rounded-full flex items-center justify-center mb-6 text-red-600 group-hover:scale-110 transition-transform">
+                        <i data-lucide="clock" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-serif">Быстрая Доставка</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">Доставим ваш заказ в течение 60 минут или вернем деньги.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Popular Menu Section -->
-    <section id="menu" class="py-24 bg-neutral-900 relative">
+    <section id="menu" class="py-20 bg-neutral-950">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Популярные Сеты</h2>
-                <div class="w-24 h-1 bg-red-700 mx-auto"></div>
+                <span class="text-red-500 text-sm font-bold uppercase tracking-wider mb-2 block">Выбор Гостей</span>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Популярные Сеты</h2>
+                <div class="w-24 h-1 bg-red-700 mx-auto rounded-full"></div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Card 1 -->
-                <div class="group bg-neutral-950 border border-neutral-800 hover:border-red-900/50 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(220,38,38,0.15)]">
+                <div class="bg-neutral-900 rounded-xl overflow-hidden group hover:shadow-2xl hover:shadow-red-900/20 transition-all duration-300 border border-white/5">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="https://placehold.co/600x400/222/555?text=Dragon+Set" alt="Dragon Set" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute top-4 left-4 bg-red-700 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Хит</div>
+                        <img src="https://placehold.co/600x600/222/red?text=Phila+Set" alt="Сет Филадельфия" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">ХИТ</div>
                     </div>
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-2xl font-serif font-bold group-hover:text-red-500 transition-colors">Дракон Сет</h3>
-                            <span class="text-red-500 font-bold text-xl">2400₽</span>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">Сет "Филадельфия"</h3>
+                            <span class="text-red-500 font-bold">1200₽</span>
                         </div>
-                        <p class="text-gray-400 text-sm mb-6 line-clamp-2">Угорь, авокадо, сливочный сыр, соус унаги, кунжут, рис премиум, нори.</p>
-                        <button class="w-full py-3 bg-neutral-800 hover:bg-red-600 text-white font-medium rounded transition-colors flex items-center justify-center gap-2 group-btn">
-                            <i data-lucide="plus" class="w-5 h-5"></i>
-                            <span>В корзину</span>
+                        <p class="text-neutral-400 text-sm mb-4 h-10 overflow-hidden">Филадельфия классик, Филадельфия лайт, Маки с огурцом (32 шт)</p>
+                        <button class="w-full py-3 bg-neutral-800 hover:bg-red-700 text-white rounded-lg transition-colors flex items-center justify-center gap-2 group-btn">
+                            <i data-lucide="plus" class="w-4 h-4"></i>
+                            <span>В Корзину</span>
                         </button>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="group bg-neutral-950 border border-neutral-800 hover:border-red-900/50 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(220,38,38,0.15)]">
+                <div class="bg-neutral-900 rounded-xl overflow-hidden group hover:shadow-2xl hover:shadow-red-900/20 transition-all duration-300 border border-white/5">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="https://placehold.co/600x400/222/555?text=Philadelphia+Set" alt="Philadelphia Set" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <img src="https://placehold.co/600x600/222/red?text=Hot+Set" alt="Сет Запеченный" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">HOT</div>
                     </div>
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-2xl font-serif font-bold group-hover:text-red-500 transition-colors">Филадельфия</h3>
-                            <span class="text-red-500 font-bold text-xl">1800₽</span>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">Сет "Вулкан"</h3>
+                            <span class="text-red-500 font-bold">1450₽</span>
                         </div>
-                        <p class="text-gray-400 text-sm mb-6 line-clamp-2">Лосось охлажденный, сливочный сыр, огурец, авокадо, рис, нори.</p>
-                        <button class="w-full py-3 bg-neutral-800 hover:bg-red-600 text-white font-medium rounded transition-colors flex items-center justify-center gap-2 group-btn">
-                            <i data-lucide="plus" class="w-5 h-5"></i>
-                            <span>В корзину</span>
+                        <p class="text-neutral-400 text-sm mb-4 h-10 overflow-hidden">Запеченный с крабом, Темпура с креветкой, Яки лосось (24 шт)</p>
+                        <button class="w-full py-3 bg-neutral-800 hover:bg-red-700 text-white rounded-lg transition-colors flex items-center justify-center gap-2 group-btn">
+                            <i data-lucide="plus" class="w-4 h-4"></i>
+                            <span>В Корзину</span>
                         </button>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="group bg-neutral-950 border border-neutral-800 hover:border-red-900/50 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(220,38,38,0.15)]">
+                <div class="bg-neutral-900 rounded-xl overflow-hidden group hover:shadow-2xl hover:shadow-red-900/20 transition-all duration-300 border border-white/5">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="https://placehold.co/600x400/222/555?text=Spicy+Set" alt="Spicy Set" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute top-4 left-4 bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Острое</div>
+                        <img src="https://placehold.co/600x600/222/red?text=Dragon+Set" alt="Сет Дракон" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                     </div>
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-2xl font-serif font-bold group-hover:text-red-500 transition-colors">Спайси Сет</h3>
-                            <span class="text-red-500 font-bold text-xl">2100₽</span>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">Сет "Дракон"</h3>
+                            <span class="text-red-500 font-bold">1600₽</span>
                         </div>
-                        <p class="text-gray-400 text-sm mb-6 line-clamp-2">Тунец, лосось, острый соус спайси, халапеньо, зеленый лук, тобико.</p>
-                        <button class="w-full py-3 bg-neutral-800 hover:bg-red-600 text-white font-medium rounded transition-colors flex items-center justify-center gap-2 group-btn">
-                            <i data-lucide="plus" class="w-5 h-5"></i>
-                            <span>В корзину</span>
+                        <p class="text-neutral-400 text-sm mb-4 h-10 overflow-hidden">Зеленый дракон, Красный дракон, Черный дракон (24 шт)</p>
+                        <button class="w-full py-3 bg-neutral-800 hover:bg-red-700 text-white rounded-lg transition-colors flex items-center justify-center gap-2 group-btn">
+                            <i data-lucide="plus" class="w-4 h-4"></i>
+                            <span>В Корзину</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-neutral-900 rounded-xl overflow-hidden group hover:shadow-2xl hover:shadow-red-900/20 transition-all duration-300 border border-white/5">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://placehold.co/600x600/222/red?text=Party+Set" alt="Сет Вечеринка" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">Сет "Вечеринка"</h3>
+                            <span class="text-red-500 font-bold">2500₽</span>
+                        </div>
+                        <p class="text-neutral-400 text-sm mb-4 h-10 overflow-hidden">Ассорти из 5 видов роллов на большую компанию (40 шт)</p>
+                        <button class="w-full py-3 bg-neutral-800 hover:bg-red-700 text-white rounded-lg transition-colors flex items-center justify-center gap-2 group-btn">
+                            <i data-lucide="plus" class="w-4 h-4"></i>
+                            <span>В Корзину</span>
                         </button>
                     </div>
                 </div>
             </div>
-            
+
             <div class="mt-12 text-center">
-                <a href="#" class="inline-flex items-center gap-2 text-red-500 hover:text-red-400 uppercase tracking-widest font-bold text-sm transition-colors border-b border-red-500 pb-1 hover:border-red-400">
-                    <span>Смотреть всё меню</span>
-                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                <a href="#" class="inline-flex items-center gap-2 text-white border-b border-red-600 hover:text-red-500 pb-1 transition-colors">
+                    Посмотреть полное меню <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="about" class="py-24 bg-neutral-950">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div class="relative">
-                    <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-red-700 opacity-50"></div>
-                    <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-red-700 opacity-50"></div>
-                    <img src="https://placehold.co/800x1000/222/555?text=Sushi+Chef" alt="Chef" class="w-full h-auto rounded shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-neutral-900 relative overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-red-600"></div>
+                        <img src="https://placehold.co/800x600/1a1a1a/333333?text=Chef+Working" alt="Наш Шеф" class="rounded-lg shadow-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-500">
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-red-600"></div>
+                    </div>
                 </div>
-                <div>
-                    <span class="text-red-500 font-bold tracking-widest uppercase text-sm mb-2 block">О Нас</span>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Искусство в каждой детали</h2>
-                    <p class="text-gray-400 leading-relaxed mb-6">
-                        В СушиСет мы верим, что суши — это не просто еда, а ритуал. Наши повара обучались у лучших мастеров Токио, чтобы принести аутентичный вкус в каждый ролл.
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl font-serif font-bold mb-6">Традиции в каждом кусочке</h2>
+                    <p class="text-neutral-400 mb-6 leading-relaxed">
+                        Мы верим, что суши — это не просто еда, а искусство. Наш шеф-повар лично отбирает рыбу каждое утро, чтобы гарантировать идеальную свежесть. Мы используем только японский рис премиум-класса и варим его по особому рецепту.
                     </p>
                     <ul class="space-y-4 mb-8">
-                        <li class="flex items-start gap-4">
-                            <div class="w-6 h-6 rounded-full bg-red-900/30 flex items-center justify-center mt-1 shrink-0">
-                                <i data-lucide="check" class="w-4 h-4 text-red-500"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white">Свежайшая рыба</h4>
-                                <p class="text-sm text-gray-500">Поставки морепродуктов каждое утро</p>
-                            </div>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="text-red-600 w-5 h-5"></i>
+                            <span class="text-gray-300">Только охлажденный лосось (Фарерские острова)</span>
                         </li>
-                        <li class="flex items-start gap-4">
-                            <div class="w-6 h-6 rounded-full bg-red-900/30 flex items-center justify-center mt-1 shrink-0">
-                                <i data-lucide="check" class="w-4 h-4 text-red-500"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white">Авторские рецепты</h4>
-                                <p class="text-sm text-gray-500">Уникальные сочетания вкусов от шефа</p>
-                            </div>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="text-red-600 w-5 h-5"></i>
+                            <span class="text-gray-300">Настоящий сыр Филадельфия</span>
                         </li>
-                        <li class="flex items-start gap-4">
-                            <div class="w-6 h-6 rounded-full bg-red-900/30 flex items-center justify-center mt-1 shrink-0">
-                                <i data-lucide="check" class="w-4 h-4 text-red-500"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white">Быстрая доставка</h4>
-                                <p class="text-sm text-gray-500">Среднее время доставки - 45 минут</p>
-                            </div>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="text-red-600 w-5 h-5"></i>
+                            <span class="text-gray-300">Соусы собственного приготовления</span>
                         </li>
                     </ul>
+                    <a href="#" class="px-8 py-3 bg-neutral-800 text-white rounded-full hover:bg-red-700 transition-colors inline-block">
+                        Узнать больше
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Delivery / CTA -->
+    <section id="delivery" class="py-20 bg-red-900/20 border-y border-red-900/30">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6">Бесплатная доставка от 1500₽</h2>
+            <p class="text-xl text-neutral-300 mb-8 max-w-2xl mx-auto">
+                Закажите сейчас и получите ролл "Калифорния" в подарок к первому заказу по промокоду <span class="text-red-500 font-bold">START</span>
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <input type="text" placeholder="Ваш номер телефона" class="px-6 py-4 rounded-full bg-neutral-900 border border-white/10 text-white focus:outline-none focus:border-red-600 w-full sm:w-80">
+                <button class="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full transition-colors shadow-lg shadow-red-900/50">
+                    Заказать звонок
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="bg-black py-16 border-t border-white/5">
+    <footer class="bg-neutral-950 pt-16 pb-8 border-t border-white/5">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 md:col-span-1">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
                     <a href="#" class="flex items-center gap-2 mb-6">
-                        <div class="w-8 h-8 bg-red-700 rounded-full flex items-center justify-center">
-                            <span class="font-serif font-bold text-lg text-white">С</span>
-                        </div>
-                        <span class="font-serif text-xl font-bold tracking-wider text-white">Суши<span class="text-red-600">Сет.</span></span>
+                        <span class="text-3xl">🍣</span>
+                        <span class="font-serif text-2xl font-bold text-white">Суши<span class="text-red-600">Сет.</span></span>
                     </a>
-                    <p class="text-gray-500 text-sm leading-relaxed">
-                        Премиальная японская кухня с доставкой на дом. Почувствуйте вкус настоящей Азии.
+                    <p class="text-neutral-500 text-sm">
+                        Лучшие суши и роллы в городе. <br>
+                        Качество, проверенное временем.
                     </p>
                 </div>
-                
                 <div>
-                    <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-sm">Меню</h4>
-                    <ul class="space-y-3 text-sm text-gray-500">
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Меню</h4>
+                    <ul class="space-y-2 text-neutral-500 text-sm">
                         <li><a href="#" class="hover:text-red-500 transition-colors">Сеты</a></li>
                         <li><a href="#" class="hover:text-red-500 transition-colors">Роллы</a></li>
-                        <li><a href="#" class="hover:text-red-500 transition-colors">Суши</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition-colors">Суши и Гунканы</a></li>
                         <li><a href="#" class="hover:text-red-500 transition-colors">Напитки</a></li>
                     </ul>
                 </div>
-
                 <div>
-                    <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-sm">Информация</h4>
-                    <ul class="space-y-3 text-sm text-gray-500">
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Информация</h4>
+                    <ul class="space-y-2 text-neutral-500 text-sm">
                         <li><a href="#" class="hover:text-red-500 transition-colors">О нас</a></li>
                         <li><a href="#" class="hover:text-red-500 transition-colors">Доставка и оплата</a></li>
                         <li><a href="#" class="hover:text-red-500 transition-colors">Контакты</a></li>
                         <li><a href="#" class="hover:text-red-500 transition-colors">Акции</a></li>
                     </ul>
                 </div>
-
                 <div>
-                    <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-sm">Контакты</h4>
-                    <ul class="space-y-3 text-sm text-gray-500">
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="phone" class="w-4 h-4 text-red-600"></i>
-                            <span>+7 (999) 000-00-00</span>
-                        </li>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Контакты</h4>
+                    <ul class="space-y-3 text-neutral-500 text-sm">
                         <li class="flex items-center gap-3">
                             <i data-lucide="map-pin" class="w-4 h-4 text-red-600"></i>
-                            <span>ул. Ленина, 1, Москва</span>
+                            ул. Ленина, 45, Москва
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-4 h-4 text-red-600"></i>
+                            +7 (999) 000-00-00
                         </li>
                         <li class="flex items-center gap-3">
                             <i data-lucide="clock" class="w-4 h-4 text-red-600"></i>
-                            <span>Ежедневно 10:00 - 23:00</span>
+                            10:00 - 23:00 (Ежедневно)
                         </li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
+            <div class="border-t border-white/5 pt-8 text-center text-neutral-600 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
                 <p>&copy; 2024 СушиСет. Все права защищены.</p>
                 <div class="flex gap-4">
-                    <a href="#" class="hover:text-white transition-colors">Политика конфиденциальности</a>
-                    <a href="#" class="hover:text-white transition-colors">Условия использования</a>
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
