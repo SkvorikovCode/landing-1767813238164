@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
-        // Change icon based on state (optional visual flair)
+        // Change icon based on state
         const icon = mobileMenu.classList.contains('hidden') ? 'menu' : 'x';
         menuBtn.innerHTML = `<i data-lucide="${icon}" class="w-8 h-8"></i>`;
         lucide.createIcons();
@@ -36,27 +36,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Add to Cart Animation Simulation
-    const addButtons = document.querySelectorAll('button');
+    // Add to Cart Animation
+    const addButtons = document.querySelectorAll('.group-btn');
     addButtons.forEach(btn => {
         btn.addEventListener('click', function(e) {
-            // Check if it's an "Add" button (contains plus icon)
-            if(this.querySelector('[data-lucide="plus"]')) {
-                const originalContent = this.innerHTML;
-                
-                // Visual feedback
-                this.classList.add('bg-green-600', 'hover:bg-green-700');
-                this.classList.remove('bg-neutral-800', 'hover:bg-red-600');
-                this.innerHTML = `<i data-lucide="check" class="w-5 h-5"></i>`;
+            // Visual feedback
+            const originalContent = this.innerHTML;
+            
+            // Success state
+            this.classList.remove('bg-neutral-800', 'hover:bg-red-600');
+            this.classList.add('bg-green-600');
+            this.innerHTML = `<i data-lucide="check" class="w-5 h-5"></i><span>Добавлено</span>`;
+            lucide.createIcons();
+            
+            // Revert after 2 seconds
+            setTimeout(() => {
+                this.classList.remove('bg-green-600');
+                this.classList.add('bg-neutral-800', 'hover:bg-red-600');
+                this.innerHTML = originalContent;
                 lucide.createIcons();
+            }, 2000);
 
-                // Revert after 1.5s
-                setTimeout(() => {
-                    this.classList.remove('bg-green-600', 'hover:bg-green-700');
-                    this.classList.add('bg-neutral-800', 'hover:bg-red-600');
-                    this.innerHTML = originalContent;
-                    lucide.createIcons();
-                }, 1500);
+            // Animate Cart Icon in Header
+            const cartBadge = document.querySelector('.fa-shopping-bag ~ span') || document.querySelector('button .bg-red-600');
+            if (cartBadge) {
+                let count = parseInt(cartBadge.innerText);
+                cartBadge.innerText = count + 1;
+                cartBadge.classList.add('scale-125');
+                setTimeout(() => cartBadge.classList.remove('scale-125'), 200);
             }
         });
     });
