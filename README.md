@@ -1,6 +1,6 @@
 # 🚀 Landing Page
 
-Добавь логотип в виде emoji sushi
+Сделай название на англ
 
 ## 🌐 Live Demo
 
